@@ -5,56 +5,6 @@ import BookCard from '../BookCard'
 
 import './index.css'
 
-const initialBooksData = [
-  {
-    book_id: 1,
-    title: 'Harry Potter and the Sorcerers Stone',
-    authorId: 1,
-    rating: 4.48,
-    ratingCount: 7464819,
-    reviewCount: 118312,
-    description:
-      'Harry Potters life is miserable. His parents are dead and hes stuck with his heartless relatives.',
-    pages: 309,
-    dateOfPublication: 'November 1st 2003',
-    editionLanguage: 'English',
-    price: 750,
-    onlineStores: 'Amazon, Audible,Google play, Indigo,Abebooks',
-  },
-  {
-    book_id: 14,
-    title: 'The Return of the King',
-    authorId: 3,
-    rating: 4.53,
-    ratingCount: 708740,
-    reviewCount: 10976,
-    description:
-      'In the third volume of The Lord of the Rings trilogy the good and evil forces join battle.',
-    pages: 385,
-    dateOfPublication: 'July 12th 1974',
-    editionLanguage: 'English',
-    price: 1050,
-    onlineStores:
-      'Amazon, Apple Books,Google play, Indigo,Abebooks,Walmart eBooks,Audible',
-  },
-  {
-    book_id: 13,
-    title: 'The Two Towers',
-    authorId: 3,
-    rating: 4.45,
-    ratingCount: 754093,
-    reviewCount: 11640,
-    description:
-      'Frodo and his Companions of the Ring have been beset by danger.',
-    pages: 447,
-    dateOfPublication: 'September 12th 1974',
-    editionLanguage: 'English',
-    price: 650,
-    onlineStores:
-      'Amazon, Apple Books,Google play, Indigo,Abebooks,Walmart eBooks,Audible',
-  },
-]
-
 const apiStatusConstants = {
   initial: 'INITIAL',
   success: 'SUCCESS',
@@ -127,7 +77,7 @@ const BooksList = () => {
   const renderBooksListView = () => {
     const {data} = apiResponse
     return (
-      <div class='books-list-container'>
+      <div className='books-list-container'>
         <ul className='books-list'>
           {data.map(book => (
             <BookCard key={book.book_id} book={book} />
